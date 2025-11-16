@@ -1,0 +1,227 @@
+:root {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --accent: #06b6d4;
+  --text: #0f172a;
+  --muted: #64748b;
+  --radius: 12px;
+  --max-width: 1000px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('c:\Users\syahr\Downloads\IMG_8602.JPG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap { width: 100%; max-width: var(--max-width); }
+
+header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+nav { margin-left: auto; }
+
+nav ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+}
+
+nav a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .25s, transform .12s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: center;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+
+.hero h1 { font-size: 28px; margin-bottom: 8px; }
+.hero p { color: var(--muted); }
+
+.profile-photo img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+
+/* Timeline */
+.timeline { display: flex; flex-direction: column; gap: 10px; }
+
+.timeline-item { display: flex; gap: 12px; }
+.timeline-item .dot {
+  min-width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.project {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(2,6,23,0.02);
+  transition: transform .18s, box-shadow .18s;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+}
+
+.p-muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 14px;
+}
+
+form label {
+  display: block;
+  font-size: 13px;
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eef8;
+  background: transparent;
+  margin-top: 4px;
+}
+
+footer { margin-top: 18px; text-align: center; color: var(--muted); }
+
+.footer-card {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 480px) {
+  .gallery img { height: 110px; }
+}
